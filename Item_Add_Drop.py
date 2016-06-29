@@ -88,8 +88,9 @@ def drop_item():                        #Drop Item function
                 item_total -= 1                                         #Subtract one from item total
                 item_weight -= inventory[option]                        #Subtract item weight from total weight carried
                 del inventory_copy[option]                              #Delete item from Copy of User Inventory List
-            elif option not in inventory:                   #If user input not in Inventory List
+            elif drop not in inventory:                   #If user input not in Inventory List
                 print('That is not a valid response.')
+                drop_item()
         for each in inventory_copy:                         #Cycles through each item in Inventory copy
             inventory[each] = inventory_copy[each]          #Sets items in Inventory equal to Inventory Copy to avoid errors when looping through a list while removing items from it
     elif drop_choice == 2:                          #User input = 2
